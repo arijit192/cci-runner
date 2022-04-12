@@ -7,11 +7,11 @@ jobs:
     steps:
       - checkout
       #- run: dd if=/dev/zero of=swapfile bs=1M count=8192 status=progress && sudo chown root:disk swapfile && sudo chmod 600 swapfile && sudo mkswap swapfile && sudo swapon swapfile
-      - run: sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
+      #- run: sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
       - run: free -h
       - run: git config --global user.email "tukaiari@gmail.com"
       - run: git config --global user.name "Arijit Roy"
-      - run: sudo apt update
+      - run: sudo apt update && sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
       - run: mkdir caf && cd caf && repo init --depth=1 -u https://git.codelinaro.org/clo/la/platform/manifest.git -b release -m LA.UM.10.2.1.r1-03600-sdm660.0.xml --repo-url=https://git.codelinaro.org/clo/tools/repo.git --repo-branch=clo-stable
       - run: mkdir ~/bin && PATH=~/bin:$PATH && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
       - run: cd caf && repo sync -c --no-tags
