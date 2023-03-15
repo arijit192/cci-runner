@@ -19,4 +19,4 @@ jobs:
       #- run: cd actions-runner && echo -en "\n\n\n\n" | ./config.sh --url https://github.com/arijit192/cci --token ADVKAGBJBAXPY6LTB3STRLDB5SDWA && ./run.sh
       - run:
           command: cd posp && source build/envsetup.sh && lunch potato_alioth-userdebug && brunch alioth
-          no_output_timeout: 2h
+          no_output_timeout: 2h 
